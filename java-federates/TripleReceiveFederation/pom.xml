@@ -13,7 +13,7 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<federation.name>TripleFederation</federation.name>
-		<federate.name>TripleSend</federate.name>
+		<federate.name>TripleReceive</federate.name>
 		<c2w.version>0.3.0-SNAPSHOT</c2w.version>
 		<nar.version>3.3.0</nar.version>
 	</properties>
@@ -32,10 +32,9 @@
 	<build>
 		<resources>
 			<resource>
-				<directory>${project.basedir}</directory>
+				<directory>src/main/resources</directory>
 				<includes>
 					<include>log4j2.xml</include>
-					<include>pom.xml</include>
 				</includes>
 			</resource>
 		</resources>
@@ -65,7 +64,7 @@
 							<filters>
 								<filter>
 									<includes>
-										<include>log4j2.xml</include>
+										<include>**/log4j2.xml</include>
 									</includes>
 									<excludes>
 										<exclude>META-INF/*.SF</exclude>

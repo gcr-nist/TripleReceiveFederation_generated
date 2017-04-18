@@ -6,7 +6,7 @@ hla.rti.ConcurrentAccessAttempted: Currently ticking serial:0
 	at c2w.hla.SynchronizedFederate.handleIfSimEnd(SynchronizedFederate.java:1324)
 	at c2w.hla.SynchronizedFederate.receiveInteractionSF(SynchronizedFederate.java:1313)
 	at c2w.hla.SynchronizedFederate.receiveInteraction(SynchronizedFederate.java:1301)
-	at TripleIFederation.TripleSendBase.receiveInteraction(TripleSendBase.java:149)
+	at TripleFederation.TripleReceiveBase.receiveInteraction(TripleReceiveBase.java:165)
 	at org.portico.impl.hla13.handlers.ReceiveInteractionCallbackHandler.process(ReceiveInteractionCallbackHandler.java:90)
 	at org.portico.utils.messaging.MessageChain.process(MessageChain.java:78)
 	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
