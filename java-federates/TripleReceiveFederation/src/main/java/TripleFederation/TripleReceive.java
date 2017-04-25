@@ -27,25 +27,33 @@ public class TripleReceive extends TripleReceiveBase {
 		InteractionRoot interaction = null;
 		ObjectReflector reflector = null;
 
+        ////////////////////////////////////////
+        // perform basic initialization below //
+        ////////////////////////////////////////
+
 		AdvanceTimeRequest atr = new AdvanceTimeRequest(logicalTime);
 		putAdvanceTimeRequest(atr);
 
 		readyToPopulate();
-		// NOTE: do initialization that depends on other federates here
+        //////////////////////////////////////////////////////////////////
+		// perform initialization that depends on other federates below //
+        //////////////////////////////////////////////////////////////////
 		readyToRun();
 
 		startAdvanceTimeThread();
 
 		// executes until the federate terminates
 		while (true) {
-			// NOTE: change the federate logical step size below
+            /////////////////////////////////////////////////////////
+            // update step size for logical time progression below //
+            /////////////////////////////////////////////////////////
 			logicalTime += 1.0;
 
 			atr.requestSyncStart();
 
-			// NOTE: send interactions beyond this line (see hla_interaction_send)
-
-			// executes until all interactions from the previous time step are handled
+            ///////////////////////////////////////////////////////////////////////
+			// send interactions that must be sent every logical time step below //
+            ///////////////////////////////////////////////////////////////////////
 			while ((interaction = getNextInteractionNoWait()) != null) {
 				
 				 
@@ -82,15 +90,21 @@ public class TripleReceive extends TripleReceiveBase {
 	
 
 	private void handleInteractionClass(Int1 interaction) {
-		log.info("Received Int1");
+        /////////////////////////////////////////////////////////////////////
+		// implement how to handle reception of the interaction Int1 below //
+        /////////////////////////////////////////////////////////////////////
 	}
 
 	private void handleInteractionClass(Int3 interaction) {
-		log.info("Received Int3");
+        /////////////////////////////////////////////////////////////////////
+		// implement how to handle reception of the interaction Int3 below //
+        /////////////////////////////////////////////////////////////////////
 	}
 
 	private void handleInteractionClass(Int2 interaction) {
-		log.info("Received Int2");
+        /////////////////////////////////////////////////////////////////////
+		// implement how to handle reception of the interaction Int2 below //
+        /////////////////////////////////////////////////////////////////////
 	}	
 		
 
